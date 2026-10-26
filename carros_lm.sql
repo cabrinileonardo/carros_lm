@@ -85,14 +85,14 @@ CREATE TABLE pagamentos (
     forma_pagamento VARCHAR(50) NOT NULL, 
     valor_pago DECIMAL(10,2) NOT NULL,
     status_pagamento VARCHAR(20) DEFAULT 'Pendente', 
-    PRIMARY KEY (id_clientesclientespagamento),
+    PRIMARY KEY (id_pagamento),
     FOREIGN KEY (id_venda) REFERENCES vendas(id_venda)
 );
 
 -- insert nas tabelas
 
 -- 1. Clientes
-INSERT INTO clientes (nome_cliente, cpf_cnpj, telefone, cep, email, ativo) VALUES
+INSERT INTO clientes (nome_cliente, cpf_cnpj, telefone, cep, email, status) VALUES
 ('Carlos Silva', '12345678901', '11999998888', '01001000', 'carlos.silva@email.com', true),
 ('Ana Beatriz Souza', '98765432100', '21988887777', '20040000', 'ana.souza@email.com', true),
 ('Marcos Rocha', '45678912344', '31977776666', '30110002', 'marcos.rocha@email.com', true);
